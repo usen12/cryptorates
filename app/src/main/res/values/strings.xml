@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CoinsRates</string>
+    <string name="coin_name">Coin: %s</string>
+    <string name="euro_sign">€: %s</string>
+    <string name="last_updated">Last Updated: %s</string>
+    <string name="date">Date: %s</string>
+    <string name="search_coin">Search for coin…</string>
+</resources>
