@@ -20,7 +20,14 @@ CoinRates displays real-time market data for hundreds of cryptocurrencies source
 
 ## Screenshots
 
-> Coming soon
+| Coin List | Search | Price History |
+|---|---|---|
+| <img src="screenshots/coin_list.png" width="230"> | <img src="screenshots/coin_search.png" width="230"> | <img src="screenshots/coin_price_history.png" width="230"> |
+
+**Coin List** — Live market prices sorted by value, auto-refreshed every 60 s.  
+**Search** — Inline panel filters all CoinGecko-supported coins by name or ID.  
+**Price History** — 14-day daily price history for any selected coin.
+
 ---
 
 ## Architecture
