@@ -10,18 +10,17 @@ CoinRates displays real-time market data for hundreds of cryptocurrencies source
 
 - Live coin market data — current price, last updated timestamp
 - 14-day price history per coin
-- Full-text search across all CoinGecko-supported coins with debounced input
+- Search by coin name or ID across all CoinGecko-supported coins with debounced input
 - Offline-first — Room cache persists between sessions
 - Automatic background refresh every 15 minutes via WorkManager
 - In-app price polling every 60 seconds while the app is active
-- Material 3 dynamic color theming with dark/light mode support
+- Material 3 theming with custom dark/light color schemes
 
 ---
 
 ## Screenshots
 
-> Add screenshots here
-
+> Coming soon
 ---
 
 ## Architecture
@@ -59,6 +58,8 @@ The app follows **Clean Architecture** with a single `feature_coin` module struc
 
 **MVVM** is used in the presentation layer. Each screen has a `@HiltViewModel` that exposes `StateFlow` state, which composables collect via `collectAsState()`.
 
+> **Note:** `SupportedCoins` is not a separate navigation route. `SupportedCoinsViewModel` is instantiated within `CoinListScreen` and renders an inline search-result panel when the search field is active. Only two routes are defined in `Screen.kt`: `CoinListScreen` and `CoinPriceHistoryScreen`.
+
 ---
 
 ## Tech Stack
@@ -92,7 +93,7 @@ app/src/main/java/com/makhabatusen/coinrates/
     ├── data/
     │   ├── local_source/
     │   │   ├── CoinDao.kt                ← Room DAO (Flow-based queries)
-    │   │   ├── CoinDatabase.kt           ← Room database definition
+    │   │   ├── CoinDataBase.kt           ← Room database definition
     │   │   └── entity/
     │   │       └── CoinEntity.kt         ← Room entity + toCoin() mapper
     │   ├── remote_source/
